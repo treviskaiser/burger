@@ -2,7 +2,7 @@ var connection = require("./connection.js");
 
 var orm = {
   selectAll: function(cb) {
-    var queryString = "SELECT * FROM burgers where devoured = 0";
+    var queryString = "SELECT * FROM burgers";
     console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) throw err;
