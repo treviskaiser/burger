@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Burgers</title>
+
+</head>
+
+<body>
+    {{{ body }}}
+</body>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+    $("#submit").on("click", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        var newBurger = {
+            burger_name: $("#b").val().trim(),
+
+        };
+        console.log(newBurger)
+        // Send the POST request.
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new cat");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $(".devour").on("click", function (event) {
+        var id = $(this).data("id");
+        console.log("****" + id)
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+        // Send the POST request.
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+        }).then(
+            function () {
+                console.log("created new cat");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+</script>
