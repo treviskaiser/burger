@@ -1,0 +1,28 @@
+.list {
+  margin: 10px;
+}
+
+.jumbotron {
+  background-image: url("burger.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+.eat {
+  margin: 0px 20px 0px 10px;
+  background-color: aqua;
+  height: 300px;
+  width: 300px;
+}
+
+.dev {
+  margin: 0px 20px 0px 10px;
+  background-color: palevioletred;
+  height: 300px;
+  width: 300px;
+}
+
+.col-6 {
+  background-color: tomato;
+}

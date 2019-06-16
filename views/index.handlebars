@@ -1,31 +1,62 @@
-<h1>Burgers</h1>
+<div class="container">
 
-<h3>EAT ME</h3>
+    <div class="jumbotron">
+        <h1 class="display-4">Burger World</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    </div>
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>{{this.burger_name}} <button class="devour" data-id="{{this.id}}">DEVOUR!</button></li>
-    {{/unless}}
-    {{/each}}
-</ul>
+    <div class="table">
+        <div class="row">
+            <div class="col eat">
+                <h3>EAT ME</h3>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li class="list">{{this.burger_name}} <button type="button" class="devour btn btn-primary"
+                            data-id="{{this.id}}">DEVOUR!</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col dev">
+                <h3>DEVOURED</h3>
+                <ul class="list">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>{{this.burger_name}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<h3>DEVOURED</h3>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>{{this.burger_name}}</li>
-    {{/if}}
-    {{/each}}
 
-</ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+                <div class="input-group mb-3">
+                    <input action="/" method="POST" type="text" id="b" class="form-control"
+                        placeholder="Insert Type of Burger" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
 
 
 
-<h2>Add a Burger</h2>
-<form class="create-form" action="/" method="POST">
-    <label>Type of Burger:</label>
-    <textarea type="text" id="b" name="wish"></textarea>
-
-    <button id="submit" type="submit">Submit</button>
-</form>
+</div>
